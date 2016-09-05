@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>13-14</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="modal-window">
+		<section class="modal-window_section">
+			<a href="" class="modal-window_close">[x]</a>
+			<p class="modal-window_result"></p>
+		</section>
+	</div>
+	<div class="js-wrap"></div>
+	<input class="submit" type="submit" name="" value="Отправить">
+		<script type="text/tmpl" id='templ'>
+			<% for(i = 0; i < makeItem.length; i++) { %>
+				<ul class="question">
+					<li class="question_item">
+						<p><%- makeItem[i].description %></p>
+						<% for(j = 0; j < makeItem[i].subDescription.length; j++) { %>
+							<ul class="answer">
+								<li class="answer_item">
+									<label><input data-action='<%- makeItem[i].subDescription[j].check %>' class="input" type="checkbox" name="" value=""><%- makeItem[i].subDescription[j].answer %></label>
+								</li>
+							</ul>
+						<% }; %>
+					</li>
+				</ul>
+			<% }; %>
+		</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+<script src="index.js"></script>
+<script src="parser-answer.js"></script>
+</body>
+</html>	
